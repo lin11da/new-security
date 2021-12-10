@@ -1,0 +1,16 @@
+# ${SPRING_PROFILES_ACTIVE} 的意思是读取名为 SPRING_PROFILES_ACTIVE 的环境变量
+profiles:
+  active: ${SPRING_PROFILES_ACTIVE}
+
+
+mybatis-plus:
+  type-aliases-package: com.example.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+jwt:
+  tokenHeader: token #JWT存储的请求头
+  secret: my-springsecurity-plus #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24*7)
+  tokenHead: 'Bearer ' #JWT负载中拿到开头
